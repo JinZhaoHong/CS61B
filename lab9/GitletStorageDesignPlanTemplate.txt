@@ -1,0 +1,175 @@
+Author: Zhaohong Jin
+UserName: cs61b-adp
+
+Basic Storage Design Plan for Gitlet
+
+
+Overview
+-------
+
+ . gitletState.ser (in the working directory) to store the entire state of the version control system. (Gitlet.java)
+
+
+Sequential Example
+-------
+
+For each of the commands below, describe in detail what files on your computer change after the command is executed. Only list changes made to files. Do not list details regarding the reading of files.
+
+$ java Gitlet init
+
+ . If it does not already exist, a new folder called .gitlet is created in the current directory.
+
+
+ . seralize the Getlet class after calling init and create gitletState.ser to contain the current state of the version control system. (Getlet.java)
+
+$ java Gitlet add dog.txt
+
+ . before add, read the state of the version control system from the gitletState.ser
+
+ . add dog.txt
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system. 
+
+ . files being staged:    dog.txt
+
+
+$ java Gitlet commit "initial commit of dog.txt"
+
+ . before commit, read the state of the version control system from the gitletState.ser
+
+ . update the headpointer of the LinkedList to point to the latest commit
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system. 
+
+ . files being committed:    dog.txt   
+
+
+$ java Gitlet add dog.txt
+
+ . before add, read the state of the version control system from the gitletState.ser
+
+ . nothing should change since dog.txt has already been added
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . no changes in files
+
+
+$ cp manyDogs.txt dog.txt
+$ java Gitlet add dog.txt
+
+ . before add, read the state of the version control system from the gitletState.ser
+
+ .  add dog.txt
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . files being changed: dog.txt
+
+ . files being staged: dog.txt 
+
+
+$ java Gitlet commit "replaced dog.txt with manyDogs"
+
+ . before commit, read the state of the version control system from the gitletState.ser
+
+ . commit and update the head pointer of the LinkedList to point to the latest commit.
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . files being committed: dog.txt
+ 
+$ java Gitlet add manyDogs.txt
+
+ . before add, read the state of the version control system from the gitletState.ser
+
+ . add manyDogs.txt
+
+ .  overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . files being staged: manyDogs.txt
+
+
+$ java Gitlet add ketchupFriend.txt
+
+ . before add, read the state of the version control system from the gitletState.ser
+
+ . add ketchuoFriend.txt
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . files begin staged: ketchupFriend.txt
+
+
+$ java Gitlet commit "added manyDogs and ketchupFriend"
+
+ . before commit, read the state of the version control system from the gitletState.ser
+
+ . commit and update the head pointer of the LinkedList to the latest commit.
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . files being committed: ketchupFriend.txt
+
+
+
+$ java Gitlet commit YOLO
+
+ . before commit, read the state of the version control system from the gitletState.ser
+
+ . should do nothing and print out an error message
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . Files: nothing changes
+
+
+
+
+$ cp doge.txt manyDogs.txt
+$ java Gitlet add manyDogs.txt
+
+ . before add, read the state of the version control system from the gitletState.ser
+
+ . add manyDogs.txt
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . Files being changed: manyDogs.txt
+
+ . Files being staged: manyDogs.txt
+
+
+$ java Gitlet commit "replaced manyDogs with doge"
+
+ . before commit, read the state of the version control system from the gitletState.ser 
+
+ . Update the head pointer of the LinkedList to point to the latest commit
+
+ .  overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . Files being committed: manyDogs.txt
+
+$ java Gitlet add dog.txt
+
+
+ . before add, read the state of the version control system from the gitletState.ser
+
+ . should do nothing since dog.txt has already been added.
+
+ .  overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . Files: nothing changes
+
+
+$ java Gitlet commit "added dog yet again"
+
+
+ . before commit, read the state of the version control system from the gitletState.ser
+
+ . should commit nothing.
+
+ . overwrite the gitletState.ser to capture the state of the entire version control system.
+
+ . Files: nothing changes
+

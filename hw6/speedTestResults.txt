@@ -1,0 +1,16 @@
+
+InsertInOrderSpeedTest
+
+String "C-Ronaldo"   Repetation             Time
+
+ULLMap                 10000               1.08 sec  
+BSTMap                 10000               0.02 sec
+TreeMap                10000               0.01 sec
+
+InsertRandomSpeedTest(L = 10000) 
+String "C-Ronaldo"   Repetation             Time
+
+ULLMap                 10000               2.65 sec  
+BSTMap                 10000               1.67 sec
+TreeMap                10000               1.60 sec
+

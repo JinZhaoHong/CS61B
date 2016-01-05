@@ -1,0 +1,2 @@
+Because i is declared as int i, and int can only hold numbers from -128 to 127.
+Now when i reaches 128, it can't increment anymore because it reaches the boundary of int.

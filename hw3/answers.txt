@@ -1,0 +1,19 @@
+Q1.
+(a) "Superanimal"
+(b) No
+(c) "RingDing"
+(d) yes
+(e) None
+(f) dynamic
+
+Q2.
+(a) compile-time error
+(b) "Ringding"
+(c) "Ringding"
+(d) dynamic
+
+Q3.
+(a) True
+(b) "Superanimal"
+(c) "Superanimal"
+(d) static

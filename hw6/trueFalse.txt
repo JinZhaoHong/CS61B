@@ -1,0 +1,8 @@
+1. T Binary put
+2. T Binary put
+3. F Binary put, should be log(N)
+4. T Binary put, log(N) < N
+5. T Binary put, log(N) < N^2
+6. F Binary put, should be log(N)
+7. T Binary put, because it is running B.containsKey() two times,  it's 2*log(N)
+8. O(N*Log(N)) Each time numberofNodes is called, takes O(N), The numberofNodes is called log(N) times

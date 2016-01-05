@@ -1,0 +1,91 @@
+1. Estimated running times (in big-theta notation):
+function1: Theta(n^2)
+function2: Theta( n )
+function3: Theta(n^3) 
+
+Data:
+               n         time
+function1:    1000       0.009
+              10000      0.182
+              100000     17.378
+
+
+function2:    1000       0.001
+              10000      0.004
+              100000     0.009
+
+
+function3:    10         0.001
+              100        0.015
+              1000       5.237
+
+Experimentally determined running time, assuming runtime is of the form ~aN^b:
+
+function1: ~2.39*10^-10*N^1.97
+function2: ~1.5*10^-5*N^0.6
+function3: ~1.26*10^-8*N^2.54
+
+2. Data:
+                              n             time
+function4:                 57885161          0.278
+                           24026583          0.119
+                           13466917          0.066
+
+function5 (best case):     100000           0.002
+                           1000000          0.012
+
+
+function5 (worst case):      999            0.001
+                             9999           0.008
+
+
+
+3. Data:
+                              n         time
+ArrayList:                   100        0.001
+                             1000       0.009
+                             10000      0.076
+                             100000     5.47
+
+HashSet:                     1000       0.03
+                             10000      0.022
+                             100000     0.053
+                             1000000    0.787
+
+
+
+
+Experimentally determined running time:
+
+ArrayList: 1.25*10^-5*N^0.95
+HashSet:    7.5*10^-8*N^1.17
+
+4. Data:
+                                       n         time
+Insertion sort with array list:       100        0.001
+                                      1000       0.012
+                                      10000      0.053
+                                      100000     5.976
+
+
+Insertion sort with linked list:      100        0.02
+                                      1000       0.273
+                                      
+
+
+
+Experimentally determined running time:
+
+Insertion sort with array:        O(N*2)
+Insertion sort with linked list:  O(1.1*10^-4*N*1.13)
+
+5. Initial guess: O(___)
+
+Data:             n               time
+
+
+
+
+Experimentally determined running time: O(___)
+
+
